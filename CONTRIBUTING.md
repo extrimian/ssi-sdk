@@ -4,7 +4,7 @@ This repo acts as a one-stop, opinionated toolkit for all things Self Sovereign 
 
 When you're ready you may:
 * Propose ideas in our SSI [discord](https://discord.com/channels/937858703112155166/969272692891086868) channel
-* Raise an issue or feature request in our [issue tracker](https://github.com/TBD54566975/ssi-sdk/issues)
+* Raise an issue or feature request in our [issue tracker](https://github.com/extrimian/ssi-sdk/issues)
 * Help another contributor with one of their questions, or a code review
 
 
@@ -85,7 +85,7 @@ $> mage cbt
 ### Issues
 
 Anyone from the community is welcome (and encouraged!) to raise issues
-via [GitHub Issues](https://github.com/TBD54566975/ssi-sdk/issues).
+via [GitHub Issues](https://github.com/extrimian/ssi-sdk/issues).
 
 We label issues according to their functionality (e.g. `dids`, `sign-verify`, `credentials`, `bug`, `documentation`, `testing` and more). If you don't see an appropriate label for an issue feel free to request a new one. 
 
@@ -100,7 +100,7 @@ We advocate an asynchronous, written debate model - so write up your thoughts an
 ### Continuous Integration
 
 Build and Test cycles are run on every commit to every branch
-using [GitHub Actions](https://github.com/TBD54566975/ssi-sdk/actions).
+using [GitHub Actions](https://github.com/extrimian/ssi-sdk/actions).
 
 ## Contribution
 
@@ -119,7 +119,7 @@ We suggest the following process when picking up an issue:
  * You may also choose to paste a link to the PR in the original issue.
 
 If you don't see an issue for what you would like to work on, have an idea for a new features found a bug, or have a question...
-* Start by proposing a change either in [GitHub Issues](https://github.com/TBD54566975/ssi-sdk/issues) or on our Discord in the `#ssi` channel
+* Start by proposing a change either in [GitHub Issues](https://github.com/extrimian/ssi-sdk/issues) or on our Discord in the `#ssi` channel
 * Fork the repo into your own namespace/remote
 * Work in a dedicated feature branch. Atlassian wrote a
   great [description of this workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)

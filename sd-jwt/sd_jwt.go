@@ -437,7 +437,7 @@ type VerificationOptions struct {
 // VerifySDPresentation takes in a combined presentation format as defined in https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-04.html#name-combined-format-for-present
 // and Verifies it according to https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-04.html#name-verification-by-the-verifie
 // Succesful verifications return a processed SD-JWT payload.
-// TODO(https://github.com/TBD54566975/ssi-sdk/issues/378): only accept certain algos for validating the JWT, and the holder binding JWT
+// TODO(https://github.com/extrimian/ssi-sdk/issues/378): only accept certain algos for validating the JWT, and the holder binding JWT
 func VerifySDPresentation(presentation []byte, verificationOptions VerificationOptions) (map[string]any, error) {
 	// 2. Separate the Presentation into the SD-JWT, the Disclosures (if any), and the Holder Binding JWT (if provided).
 	sdParts := strings.Split(string(presentation), "~")
@@ -489,7 +489,7 @@ func VerifySDPresentation(presentation []byte, verificationOptions VerificationO
 		holderKey := verificationOptions.ResolveHolderKey(sdToken)
 
 		// Ensure that a signing algorithm was used that was deemed secure for the application. Refer to [RFC8725], Sections 3.1 and 3.2 for details. The none algorithm MUST NOT be accepted.
-		// TODO(https://github.com/TBD54566975/ssi-sdk/issues/377): support holder binding properly as specified in RFC7800. Alg should be coming from CNF.
+		// TODO(https://github.com/extrimian/ssi-sdk/issues/377): support holder binding properly as specified in RFC7800. Alg should be coming from CNF.
 		holderBindingAlg := jwa.ES256K
 
 		// Validate the signature over the Holder Binding JWT.

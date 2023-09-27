@@ -24,10 +24,10 @@ import (
 	"github.com/multiformats/go-varint"
 	"github.com/pkg/errors"
 
-	"github.com/TBD54566975/ssi-sdk/crypto"
-	"github.com/TBD54566975/ssi-sdk/did"
-	"github.com/TBD54566975/ssi-sdk/did/resolution"
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/did"
+	"github.com/extrimian/ssi-sdk/did/resolution"
+	"github.com/extrimian/ssi-sdk/util"
 )
 
 type (
@@ -133,7 +133,7 @@ func (DIDPeer) Delta(_ DIDPeer) (*PeerDelta, error) {
 	return nil, errors.Wrap(util.NotImplementedError, "peer:did delta")
 }
 
-// TODO: CRDT https://github.com/TBD54566975/ssi-sdk/issues/138
+// TODO: CRDT https://github.com/extrimian/ssi-sdk/issues/138
 // https://identity.foundation/peer-did-method-spec/#crdts
 
 // Generates the key by types

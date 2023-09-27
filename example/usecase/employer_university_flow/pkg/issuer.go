@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TBD54566975/ssi-sdk/credential/integrity"
-	"github.com/TBD54566975/ssi-sdk/crypto/jwx"
+	"github.com/extrimian/ssi-sdk/credential/integrity"
+	"github.com/extrimian/ssi-sdk/crypto/jwx"
 	"github.com/goccy/go-json"
 
-	"github.com/TBD54566975/ssi-sdk/credential"
-	"github.com/TBD54566975/ssi-sdk/example"
+	"github.com/extrimian/ssi-sdk/credential"
+	"github.com/extrimian/ssi-sdk/example"
 	"github.com/sirupsen/logrus"
 )
 
@@ -41,7 +41,7 @@ func BuildExampleUniversityVC(signer jwx.Signer, universityDID, recipientDID str
 	}
 
 	// For more information on VC object, go to:
-	// https://github.com/TBD54566975/ssi-sdk/blob/main/credential/model.go
+	// https://github.com/extrimian/ssi-sdk/blob/main/credential/model.go
 	knownCred := credential.VerifiableCredential{
 		Context:           knownContext,
 		ID:                knownID,

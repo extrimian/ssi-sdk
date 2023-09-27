@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TBD54566975/ssi-sdk/credential"
-	"github.com/TBD54566975/ssi-sdk/crypto/jwx"
-	"github.com/TBD54566975/ssi-sdk/did/resolution"
+	"github.com/extrimian/ssi-sdk/credential"
+	"github.com/extrimian/ssi-sdk/crypto/jwx"
+	"github.com/extrimian/ssi-sdk/did/resolution"
 
 	"github.com/goccy/go-json"
 	"github.com/google/uuid"
@@ -24,7 +24,7 @@ const (
 )
 
 // SignVerifiableCredentialJWT is prepared according to https://w3c.github.io/vc-jwt/#version-1.1
-// which will soon be deprecated by https://w3c.github.io/vc-jwt/ see: https://github.com/TBD54566975/ssi-sdk/issues/191
+// which will soon be deprecated by https://w3c.github.io/vc-jwt/ see: https://github.com/extrimian/ssi-sdk/issues/191
 func SignVerifiableCredentialJWT(signer jwx.Signer, cred credential.VerifiableCredential) ([]byte, error) {
 	if cred.IsEmpty() {
 		return nil, errors.New("credential cannot be empty")

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/TBD54566975/ssi-sdk/credential"
-	credschema "github.com/TBD54566975/ssi-sdk/credential/schema"
+	"github.com/extrimian/ssi-sdk/credential"
+	credschema "github.com/extrimian/ssi-sdk/credential/schema"
 	"github.com/goccy/go-json"
 	"github.com/pkg/errors"
 )

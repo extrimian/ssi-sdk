@@ -3,9 +3,9 @@ package manifest
 import (
 	"reflect"
 
-	"github.com/TBD54566975/ssi-sdk/credential/exchange"
-	"github.com/TBD54566975/ssi-sdk/credential/rendering"
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/credential/exchange"
+	"github.com/extrimian/ssi-sdk/credential/rendering"
+	"github.com/extrimian/ssi-sdk/util"
 	"github.com/pkg/errors"
 )
 

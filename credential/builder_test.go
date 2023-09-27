@@ -3,7 +3,7 @@ package credential
 import (
 	"testing"
 
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/util"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -11,14 +11,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/TBD54566975/ssi-sdk/crypto/jwx"
-	"github.com/TBD54566975/ssi-sdk/cryptosuite/jws2020"
+	"github.com/extrimian/ssi-sdk/crypto/jwx"
+	"github.com/extrimian/ssi-sdk/cryptosuite/jws2020"
 	"github.com/goccy/go-json"
 
-	"github.com/TBD54566975/ssi-sdk/credential/exchange"
-	"github.com/TBD54566975/ssi-sdk/crypto"
-	"github.com/TBD54566975/ssi-sdk/example"
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/credential/exchange"
+	"github.com/extrimian/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/example"
+	"github.com/extrimian/ssi-sdk/util"
 )
 
 // Makes a dummy presentation definition. These are eventually transported via Presentation Request.
@@ -49,7 +49,7 @@ func makePresentationData() exchange.PresentationDefinition {
 // For more information, please go to here:
 // https://identity.foundation/presentation-exchange/#presentation-request
 // and for the source code with the sdk,
-// https://github.com/TBD54566975/ssi-sdk/blob/main/credential/exchange/request.go
+// https://github.com/extrimian/ssi-sdk/blob/main/credential/exchange/request.go
 // is appropriate to start off with.
 func makePresentationRequest(requesterID string, presentationData exchange.PresentationDefinition) ([]byte, error) {
 	// Generate JSON Web Key
@@ -61,8 +61,8 @@ func makePresentationRequest(requesterID string, presentationData exchange.Prese
 	}
 
 	// Signer:
-	// https://github.com/TBD54566975/ssi-sdk/blob/main/cryptosuite/jsonwebkey2020.go#L350
-	// Implements: https://github.com/TBD54566975/ssi-sdk/blob/main/cryptosuite/jwt.go#L12
+	// https://github.com/extrimian/ssi-sdk/blob/main/cryptosuite/jsonwebkey2020.go#L350
+	// Implements: https://github.com/extrimian/ssi-sdk/blob/main/cryptosuite/jwt.go#L12
 	signer, err := jwx.NewJWXSignerFromJWK(requesterID, jwk.PrivateKeyJWK)
 	if err != nil {
 		return nil, err

@@ -11,6 +11,7 @@ const (
 	WebMethod  Method = "web"
 	IONMethod  Method = "ion"
 	JWKMethod  Method = "jwk"
+	ModenaMethod Method = "modena"
 )
 
 func (m Method) String() string {

@@ -1,7 +1,7 @@
-[![godoc ssi-sdk](https://img.shields.io/badge/godoc-ssi--sdk-blue)](https://pkg.go.dev/github.com/TBD54566975/ssi-sdk/sd-jwt)
+[![godoc ssi-sdk](https://img.shields.io/badge/godoc-ssi--sdk-blue)](https://pkg.go.dev/github.com/extrimian/ssi-sdk/sd-jwt)
 [![go version 1.21.0](https://img.shields.io/badge/go_version-1.21.0-brightgreen)](https://golang.org/)
-[![Go Report Card A+](https://goreportcard.com/badge/github.com/TBD54566975/ssi-sdk/sd-jwt)](https://goreportcard.com/report/github.com/TBD54566975/ssi-sdk/sd-jwt)
-[![license Apache 2](https://img.shields.io/badge/license-Apache%202-black)](https://github.com/TBD54566975/ssi-sdk/blob/main/LICENSE)
+[![Go Report Card A+](https://goreportcard.com/badge/github.com/extrimian/ssi-sdk/sd-jwt)](https://goreportcard.com/report/github.com/extrimian/ssi-sdk/sd-jwt)
+[![license Apache 2](https://img.shields.io/badge/license-Apache%202-black)](https://github.com/extrimian/ssi-sdk/blob/main/LICENSE)
 
 # SD-JWT support in golang
 
@@ -23,7 +23,7 @@ verification from the holder or from the verifiers perspective.
 To install `sd-jwt`, use `go get`:
 
 ```bash
-go get github.com/TBD54566975/ssi-sdk/sd-jwt
+go get github.com/extrimian/ssi-sdk/sd-jwt
 ```
 
 ## Quick Start
@@ -33,7 +33,7 @@ You can run it by cloning this repo, changing directory into this directory, and
 See the terminal command below. 
 
 ```shell
-git clone github.com/TBD54566975/ssi-sdk.git
+git clone github.com/extrimian/ssi-sdk.git
 cd ssi-sdk/sd-jwt
 go run example.main.go
 ```
@@ -42,7 +42,7 @@ go run example.main.go
 The best usage examples can be found in the [sd_jwt_test.go](sd_jwt_test.go) file.
 
 ## API Reference
-See our [oficial godocs](https://pkg.go.dev/github.com/TBD54566975/ssi-sdk/sd-jwt).
+See our [oficial godocs](https://pkg.go.dev/github.com/extrimian/ssi-sdk/sd-jwt).
 
 ## Configuration
 Configuration is done via dependency injection on the `SDJWTSigner` struct. 
@@ -60,4 +60,4 @@ See the [SDK Building](../README.md#building) section.
 See the general [CONTRIBUTING](../CONTRIBUTING.md) guide.
 
 ## Issues
-See current issues [here](https://github.com/TBD54566975/ssi-sdk/issues?q=is%3Aissue+is%3Aopen+label%3Asd-jwt). 
+See current issues [here](https://github.com/extrimian/ssi-sdk/issues?q=is%3Aissue+is%3Aopen+label%3Asd-jwt). 

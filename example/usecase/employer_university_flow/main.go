@@ -54,17 +54,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/TBD54566975/ssi-sdk/credential/integrity"
+	"github.com/extrimian/ssi-sdk/credential/integrity"
 	"github.com/goccy/go-json"
 	"github.com/sirupsen/logrus"
 
-	"github.com/TBD54566975/ssi-sdk/crypto/jwx"
-	"github.com/TBD54566975/ssi-sdk/did"
-	"github.com/TBD54566975/ssi-sdk/did/key"
-	"github.com/TBD54566975/ssi-sdk/did/peer"
-	"github.com/TBD54566975/ssi-sdk/did/resolution"
-	"github.com/TBD54566975/ssi-sdk/example"
-	emp "github.com/TBD54566975/ssi-sdk/example/usecase/employer_university_flow/pkg"
+	"github.com/extrimian/ssi-sdk/crypto/jwx"
+	"github.com/extrimian/ssi-sdk/did"
+	"github.com/extrimian/ssi-sdk/did/key"
+	"github.com/extrimian/ssi-sdk/did/peer"
+	"github.com/extrimian/ssi-sdk/did/resolution"
+	"github.com/extrimian/ssi-sdk/example"
+	emp "github.com/extrimian/ssi-sdk/example/usecase/employer_university_flow/pkg"
 )
 
 // Set to debug mode here

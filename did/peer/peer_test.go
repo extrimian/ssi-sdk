@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/TBD54566975/ssi-sdk/crypto"
-	"github.com/TBD54566975/ssi-sdk/did"
+	"github.com/extrimian/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/did"
 
 	"github.com/stretchr/testify/assert"
 )

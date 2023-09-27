@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/TBD54566975/ssi-sdk/crypto"
-	"github.com/TBD54566975/ssi-sdk/did"
-	"github.com/TBD54566975/ssi-sdk/did/key"
-	"github.com/TBD54566975/ssi-sdk/did/peer"
+	"github.com/extrimian/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/did"
+	"github.com/extrimian/ssi-sdk/did/key"
+	"github.com/extrimian/ssi-sdk/did/peer"
 )
 
 // SimpleWallet is a sample wallet

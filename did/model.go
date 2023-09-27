@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/TBD54566975/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/crypto"
 	"github.com/multiformats/go-multibase"
 
-	"github.com/TBD54566975/ssi-sdk/crypto/jwx"
-	"github.com/TBD54566975/ssi-sdk/cryptosuite"
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/crypto/jwx"
+	"github.com/extrimian/ssi-sdk/cryptosuite"
+	"github.com/extrimian/ssi-sdk/util"
 )
 
 const (

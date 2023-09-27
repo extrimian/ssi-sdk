@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/util"
 	"github.com/goccy/go-json"
 	"github.com/pkg/errors"
 	"github.com/santhosh-tekuri/jsonschema/v5"

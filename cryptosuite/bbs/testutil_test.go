@@ -1,7 +1,7 @@
 package bbs
 
 import (
-	"github.com/TBD54566975/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/crypto"
 )
 
 type TestCredential struct {

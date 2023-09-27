@@ -3,7 +3,7 @@ package exchange
 import (
 	"fmt"
 
-	"github.com/TBD54566975/ssi-sdk/crypto/jwx"
+	"github.com/extrimian/ssi-sdk/crypto/jwx"
 	"github.com/goccy/go-json"
 	"github.com/google/uuid"
 	"github.com/lestrrat-go/jwx/v2/jwt"
@@ -36,7 +36,7 @@ type PresentationRequestOption struct {
 
 // BuildPresentationRequest https://identity.foundation/presentation-exchange/#presentation-request
 // used for transmitting a Presentation Definition from a holder to a verifier. Target is who the request is intended for.
-// TODO(gabe) expand to other presentation types and signers https://github.com/TBD54566975/ssi-sdk/issues/57
+// TODO(gabe) expand to other presentation types and signers https://github.com/extrimian/ssi-sdk/issues/57
 func BuildPresentationRequest(signer any, pt PresentationRequestType, def PresentationDefinition, opts ...PresentationRequestOption) ([]byte, error) {
 	if signer == nil {
 		return nil, fmt.Errorf("cannot build presentation request with nil signer")

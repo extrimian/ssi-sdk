@@ -21,7 +21,7 @@ change.
 # Releases
 
 A release is a version-identified distribution of the SSI SDK. Releases can be found
-on [GitHub’s release page](https://github.com/TBD54566975/ssi-sdk/releases). Releases are always published via GitHub,
+on [GitHub’s release page](https://github.com/extrimian/ssi-sdk/releases). Releases are always published via GitHub,
 and reference a specific commit hash.
 
 ## Release Stability
@@ -52,7 +52,7 @@ usage. They are not suffixed (e.g. `v0.5.2`).
 
 The project maintainers are responsible for creates and managing releases. If you are interested in a release but there
 isn’t one, consider referencing a specific commit hash (
-e.g. `go get github.com/[TBD54566975/ssi-sdk](https://github.com/TBD54566975/ssi-sdk)@<commit-hash>`) or reaching out to
+e.g. `go get github.com/[TBD54566975/ssi-sdk](https://github.com/extrimian/ssi-sdk)@<commit-hash>`) or reaching out to
 the team via Discord, the forums, or an issue.
 
 2. **When do we cut a new release?**
@@ -62,7 +62,7 @@ whether to promote additional testing or to advocate for stability such as in th
 
 3. **How are releases represented?**
 
-Releases can be found on [GitHub’s release page](https://github.com/TBD54566975/ssi-sdk/releases). Release notes
+Releases can be found on [GitHub’s release page](https://github.com/extrimian/ssi-sdk/releases). Release notes
 highlighting key changes accompany each release.
 
 4. **Which release should I use?**

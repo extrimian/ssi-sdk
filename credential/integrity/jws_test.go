@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/TBD54566975/ssi-sdk/credential"
+	"github.com/extrimian/ssi-sdk/credential"
 	"github.com/lestrrat-go/jwx/v2/jws"
 	"github.com/lestrrat-go/jwx/v2/jwt"
 	"github.com/stretchr/testify/assert"

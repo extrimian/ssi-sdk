@@ -1,7 +1,7 @@
 package peer
 
 import (
-	"github.com/TBD54566975/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/crypto"
 )
 
 // IsSupportedDIDPeerType returns if a given key type is supported for did:peer

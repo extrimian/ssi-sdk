@@ -9,7 +9,7 @@ import (
 	"github.com/goccy/go-json"
 	"github.com/pkg/errors"
 
-	"github.com/TBD54566975/ssi-sdk/did"
+	"github.com/extrimian/ssi-sdk/did"
 )
 
 // Option https://www.w3.org/TR/did-spec-registries/#did-resolution-options

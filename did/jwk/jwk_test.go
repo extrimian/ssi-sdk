@@ -5,13 +5,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/TBD54566975/ssi-sdk/cryptosuite/jws2020"
+	"github.com/extrimian/ssi-sdk/cryptosuite/jws2020"
 	"github.com/goccy/go-json"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/TBD54566975/ssi-sdk/crypto"
-	"github.com/TBD54566975/ssi-sdk/crypto/jwx"
-	"github.com/TBD54566975/ssi-sdk/did"
+	"github.com/extrimian/ssi-sdk/crypto"
+	"github.com/extrimian/ssi-sdk/crypto/jwx"
+	"github.com/extrimian/ssi-sdk/did"
 )
 
 const (

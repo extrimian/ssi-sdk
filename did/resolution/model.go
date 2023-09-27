@@ -3,8 +3,8 @@ package resolution
 import (
 	"reflect"
 
-	"github.com/TBD54566975/ssi-sdk/did"
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/did"
+	"github.com/extrimian/ssi-sdk/util"
 )
 
 // Result encapsulates the tuple of a DID resolution https://www.w3.org/TR/did-core/#did-resolution

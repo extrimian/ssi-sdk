@@ -3,7 +3,7 @@ package jws2020
 import (
 	"testing"
 
-	"github.com/TBD54566975/ssi-sdk/cryptosuite"
+	"github.com/extrimian/ssi-sdk/cryptosuite"
 	"github.com/stretchr/testify/assert"
 )
 

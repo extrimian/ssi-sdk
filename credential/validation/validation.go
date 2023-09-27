@@ -3,8 +3,8 @@ package validation
 import (
 	"fmt"
 
-	"github.com/TBD54566975/ssi-sdk/credential"
-	"github.com/TBD54566975/ssi-sdk/util"
+	"github.com/extrimian/ssi-sdk/credential"
+	"github.com/extrimian/ssi-sdk/util"
 	"github.com/pkg/errors"
 )
 

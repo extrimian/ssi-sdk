@@ -1,7 +1,7 @@
 package exchange
 
 import (
-	"github.com/TBD54566975/ssi-sdk/schema"
+	"github.com/extrimian/ssi-sdk/schema"
 	"github.com/goccy/go-json"
 	"github.com/pkg/errors"
 )
