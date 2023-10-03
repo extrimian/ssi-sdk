@@ -41,7 +41,7 @@ func (LocalResolver) Resolve(_ context.Context, id string, _ ...resolution.Optio
 			EquivalentID: []string{shortFormDID},
 			Method: resolution.Method{
 				Published:          false,
-				RecoveryCommitment: initialState.SuffixData.RecoveryCommitment[0],
+				RecoveryCommitment: initialState.SuffixData.RecoveryCommitment,
 				UpdateCommitment:   initialState.Delta.UpdateCommitment},
 		}}, nil
 }
@@ -107,7 +107,7 @@ func (i Resolver) Resolve(ctx context.Context, id string, _ ...resolution.Option
 				EquivalentID: []string{shortFormDID},
 				Method: resolution.Method{
 					Published:          false,
-					RecoveryCommitment: initialState.SuffixData.RecoveryCommitment[0],
+					RecoveryCommitment: initialState.SuffixData.RecoveryCommitment,
 					UpdateCommitment:   initialState.Delta.UpdateCommitment},
 			}}, nil
 	}

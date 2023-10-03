@@ -27,7 +27,7 @@ type Method struct {
 	Published bool `json:"published"`
 
 	// The `recoveryCommitment` property in https://identity.foundation/sidetree/spec/#did-resolver-output
-	RecoveryCommitment string `json:"recoveryCommitment,omitempty"`
+	RecoveryCommitment interface{} `json:"recoveryCommitment,omitempty"`
 
 	// The `updateCommitment` property in https://identity.foundation/sidetree/spec/#did-resolver-output
 	UpdateCommitment string `json:"updateCommitment,omitempty"`
