@@ -123,72 +123,72 @@ type Delta struct {
 	UpdateCommitment []string  `json:"updateCommitment,omitempty"`
 }
 
-func (d *Delta) UnmarshalJSON(data []byte) error {
-	var deltaMap map[[]string]any
-	if err := json.Unmarshal(data, &deltaMap); err != nil {
-		return errors.Wrap(err, "unmarshalling patch to generic map")
-	}
-	updateCommitment, ok := deltaMap["updateCommitment"].([]string)
-	if !ok {
-		return fmt.Errorf("no updateCommitment found in delta")
-	}
-	d.UpdateCommitment = updateCommitment
-	allPatches, ok := deltaMap["patches"].([]any)
-	if !ok {
-		return fmt.Errorf("no patches found in delta")
-	}
-	var patches []Patch
-	for _, patch := range allPatches {
-		currPatch, ok := patch.(map[string]any)
-		if !ok {
-			return fmt.Errorf("patch is not a map")
-		}
-		action, ok := currPatch["action"]
-		if !ok {
-			return fmt.Errorf("patch has no action")
-		}
-		currPatchBytes, err := json.Marshal(currPatch)
-		if err != nil {
-			return errors.Wrap(err, "marshalling patch")
-		}
-		switch action {
-		case Replace.String():
-			var ra ReplaceAction
-			if err := json.Unmarshal(currPatchBytes, &ra); err != nil {
-				return errors.Wrap(err, "unmarshalling replace action")
-			}
-			patches = append(patches, ra)
-		case AddPublicKeys.String():
-			var apa AddPublicKeysAction
-			if err := json.Unmarshal(currPatchBytes, &apa); err != nil {
-				return errors.Wrap(err, "unmarshalling add public keys action")
-			}
-			patches = append(patches, apa)
-		case RemovePublicKeys.String():
-			var rpa RemovePublicKeysAction
-			if err := json.Unmarshal(currPatchBytes, &rpa); err != nil {
-				return errors.Wrap(err, "unmarshalling remove public keys action")
-			}
-			patches = append(patches, rpa)
-		case AddServices.String():
-			var asa AddServicesAction
-			if err := json.Unmarshal(currPatchBytes, &asa); err != nil {
-				return errors.Wrap(err, "unmarshalling add services action")
-			}
-			patches = append(patches, asa)
-		case RemoveServices.String():
-			var rsa RemoveServicesAction
-			if err := json.Unmarshal(currPatchBytes, &rsa); err != nil {
-				return errors.Wrap(err, "unmarshalling remove services action")
-			}
-			patches = append(patches, rsa)
-		default:
-			return fmt.Errorf("unknown patch action: %s", action)
-		}
-	}
-	d.Patches = patches
-	return nil
-}
+// func (d *Delta) UnmarshalJSON(data []byte) error {
+// 	var deltaMap map[string]any
+// 	if err := json.Unmarshal(data, &deltaMap); err != nil {
+// 		return errors.Wrap(err, "unmarshalling patch to generic map")
+// 	}
+// 	updateCommitment, ok := deltaMap["updateCommitment"].([]string)
+// 	if !ok {
+// 		return fmt.Errorf("no updateCommitment found in delta")
+// 	}
+// 	d.UpdateCommitment = updateCommitment
+// 	allPatches, ok := deltaMap["patches"].([]any)
+// 	if !ok {
+// 		return fmt.Errorf("no patches found in delta")
+// 	}
+// 	var patches []Patch
+// 	for _, patch := range allPatches {
+// 		currPatch, ok := patch.(map[string]any)
+// 		if !ok {
+// 			return fmt.Errorf("patch is not a map")
+// 		}
+// 		action, ok := currPatch["action"]
+// 		if !ok {
+// 			return fmt.Errorf("patch has no action")
+// 		}
+// 		currPatchBytes, err := json.Marshal(currPatch)
+// 		if err != nil {
+// 			return errors.Wrap(err, "marshalling patch")
+// 		}
+// 		switch action {
+// 		case Replace.String():
+// 			var ra ReplaceAction
+// 			if err := json.Unmarshal(currPatchBytes, &ra); err != nil {
+// 				return errors.Wrap(err, "unmarshalling replace action")
+// 			}
+// 			patches = append(patches, ra)
+// 		case AddPublicKeys.String():
+// 			var apa AddPublicKeysAction
+// 			if err := json.Unmarshal(currPatchBytes, &apa); err != nil {
+// 				return errors.Wrap(err, "unmarshalling add public keys action")
+// 			}
+// 			patches = append(patches, apa)
+// 		case RemovePublicKeys.String():
+// 			var rpa RemovePublicKeysAction
+// 			if err := json.Unmarshal(currPatchBytes, &rpa); err != nil {
+// 				return errors.Wrap(err, "unmarshalling remove public keys action")
+// 			}
+// 			patches = append(patches, rpa)
+// 		case AddServices.String():
+// 			var asa AddServicesAction
+// 			if err := json.Unmarshal(currPatchBytes, &asa); err != nil {
+// 				return errors.Wrap(err, "unmarshalling add services action")
+// 			}
+// 			patches = append(patches, asa)
+// 		case RemoveServices.String():
+// 			var rsa RemoveServicesAction
+// 			if err := json.Unmarshal(currPatchBytes, &rsa); err != nil {
+// 				return errors.Wrap(err, "unmarshalling remove services action")
+// 			}
+// 			patches = append(patches, rsa)
+// 		default:
+// 			return fmt.Errorf("unknown patch action: %s", action)
+// 		}
+// 	}
+// 	d.Patches = patches
+// 	return nil
+// }
 
 func NewDelta(updateCommitment string) Delta {
 	return Delta{
