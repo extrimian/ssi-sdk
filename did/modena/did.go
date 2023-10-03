@@ -1,4 +1,4 @@
-package ion
+package modena
 
 import (
 	"fmt"
@@ -48,7 +48,7 @@ func CreateLongFormDID(recoveryKey, updateKey jwx.PublicKeyJWK, document Documen
 	}
 	is := InitialState{
 		Delta:      createRequest.Delta,
-		SuffixData: createRequest.SuffixData,
+		SuffixData: []string{createRequest.SuffixData},
 	}
 	initialStateBytesCanonical, err := CanonicalizeAny(is)
 	if err != nil {

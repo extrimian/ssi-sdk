@@ -1,4 +1,4 @@
-package ion
+package modena
 
 import (
 	"context"
@@ -12,29 +12,29 @@ import (
 
 func TestResolver(t *testing.T) {
 	t.Run("bad resolution", func(tt *testing.T) {
-		emptyResolver, err := NewIONResolver(nil, "")
+		emptyResolver, err := NewModenaResolver(nil, "")
 		assert.Error(tt, err)
 		assert.Empty(tt, emptyResolver)
 		assert.Contains(tt, err.Error(), "client cannot be nil")
 
-		emptyResolver, err = NewIONResolver(http.DefaultClient, "")
+		emptyResolver, err = NewModenaResolver(http.DefaultClient, "")
 		assert.Error(tt, err)
 		assert.Empty(tt, emptyResolver)
 		assert.Contains(tt, err.Error(), "empty url")
 
-		resolver, err := NewIONResolver(http.DefaultClient, "badurl")
+		resolver, err := NewModenaResolver(http.DefaultClient, "badurl")
 		assert.Error(tt, err)
 		assert.Empty(tt, resolver)
 		assert.Contains(tt, err.Error(), "invalid resolution URL")
 
-		httpResolver, err := NewIONResolver(http.DefaultClient, "http://badurl")
+		httpResolver, err := NewModenaResolver(http.DefaultClient, "http://badurl")
 		assert.Error(tt, err)
 		assert.Empty(tt, httpResolver)
 		assert.Contains(tt, err.Error(), "invalid resolution URL scheme; must use https")
 	})
 
 	t.Run("good resolution", func(tt *testing.T) {
-		resolver, err := NewIONResolver(http.DefaultClient, "https://www.realurl.com")
+		resolver, err := NewModenaResolver(http.DefaultClient, "https://www.realurl.com")
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, resolver)
 	})
@@ -45,7 +45,7 @@ func TestResolver(t *testing.T) {
 			Reply(404)
 		defer gock.Off()
 
-		resolver, err := NewIONResolver(http.DefaultClient, "https://test-ion-resolution.com")
+		resolver, err := NewModenaResolver(http.DefaultClient, "https://test-ion-resolution.com")
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, resolver)
 
@@ -62,7 +62,7 @@ func TestResolver(t *testing.T) {
 			BodyString("bad response")
 		defer gock.Off()
 
-		resolver, err := NewIONResolver(http.DefaultClient, "https://test-ion-resolution.com")
+		resolver, err := NewModenaResolver(http.DefaultClient, "https://test-ion-resolution.com")
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, resolver)
 
@@ -79,7 +79,7 @@ func TestResolver(t *testing.T) {
 			BodyString(`{"didDocument": {"id": "did:ion:test"}}`)
 		defer gock.Off()
 
-		resolver, err := NewIONResolver(http.DefaultClient, "https://test-ion-resolution.com")
+		resolver, err := NewModenaResolver(http.DefaultClient, "https://test-ion-resolution.com")
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, resolver)
 
@@ -97,7 +97,7 @@ func TestResolver(t *testing.T) {
 				BodyString(`{"didDocument": {"id": "did:ion:test"}}`)
 			defer gock.Off()
 
-			resolver, err := NewIONResolver(http.DefaultClient, "https://test-ion-resolution.com")
+			resolver, err := NewModenaResolver(http.DefaultClient, "https://test-ion-resolution.com")
 			assert.NoError(ttt, err)
 			assert.NotEmpty(ttt, resolver)
 
@@ -116,7 +116,7 @@ func TestResolver(t *testing.T) {
 				BodyString(`{"didDocument": {"id": "did:ion:test"}}`)
 			defer gock.Off()
 
-			resolver, err := NewIONResolver(http.DefaultClient, "https://test-ion-resolution.com")
+			resolver, err := NewModenaResolver(http.DefaultClient, "https://test-ion-resolution.com")
 			assert.NoError(ttt, err)
 			assert.NotEmpty(ttt, resolver)
 
@@ -136,7 +136,7 @@ func TestResolver(t *testing.T) {
 			BodyString("{}")
 		defer gock.Off()
 
-		resolver, err := NewIONResolver(http.DefaultClient, "https://test-ion-resolution.com")
+		resolver, err := NewModenaResolver(http.DefaultClient, "https://test-ion-resolution.com")
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, resolver)
 
@@ -152,12 +152,12 @@ func TestResolver(t *testing.T) {
 			BodyString("{}")
 		defer gock.Off()
 
-		resolver, err := NewIONResolver(http.DefaultClient, "https://test-ion-resolution.com")
+		resolver, err := NewModenaResolver(http.DefaultClient, "https://test-ion-resolution.com")
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, resolver)
 
 		// generate a good create op
-		ionDID, createOp, err := NewIONDID(Document{
+		ionDID, createOp, err := NewModenaDID(Document{
 			Services: []did.Service{
 				{
 					ID:              "tbd-website",
@@ -178,7 +178,7 @@ func TestResolver(t *testing.T) {
 
 func TestRequests(t *testing.T) {
 	t.Run("bad create request", func(tt *testing.T) {
-		ionDID, createOp, err := NewIONDID(Document{})
+		ionDID, createOp, err := NewModenaDID(Document{})
 		assert.Error(tt, err)
 		assert.Empty(tt, ionDID)
 		assert.Empty(tt, createOp)
@@ -186,7 +186,7 @@ func TestRequests(t *testing.T) {
 	})
 
 	t.Run("good create request", func(tt *testing.T) {
-		ionDID, createOp, err := NewIONDID(Document{
+		ionDID, createOp, err := NewModenaDID(Document{
 			Services: []did.Service{
 				{
 					ID:              "tbd-service-endpoint",
@@ -221,7 +221,7 @@ func TestRequests(t *testing.T) {
 	})
 
 	t.Run("bad update request", func(tt *testing.T) {
-		ionDID, createOp, err := NewIONDID(Document{
+		ionDID, createOp, err := NewModenaDID(Document{
 			Services: []did.Service{
 				{
 					ID:   "serviceID",
@@ -242,7 +242,7 @@ func TestRequests(t *testing.T) {
 	})
 
 	t.Run("good update request", func(tt *testing.T) {
-		ionDID, createOp, err := NewIONDID(Document{
+		ionDID, createOp, err := NewModenaDID(Document{
 			Services: []did.Service{
 				{
 					ID:   "serviceID",
@@ -282,7 +282,7 @@ func TestRequests(t *testing.T) {
 	})
 
 	t.Run("bad recover request", func(tt *testing.T) {
-		ionDID, createOp, err := NewIONDID(Document{
+		ionDID, createOp, err := NewModenaDID(Document{
 			Services: []did.Service{
 				{
 					ID:   "serviceID",
@@ -310,7 +310,7 @@ func TestRequests(t *testing.T) {
 				},
 			},
 		}
-		ionDID, createOp, err := NewIONDID(document)
+		ionDID, createOp, err := NewModenaDID(document)
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, ionDID)
 		assert.NotEmpty(tt, createOp)
@@ -352,7 +352,7 @@ func TestRequests(t *testing.T) {
 				},
 			},
 		}
-		ionDID, createOp, err := NewIONDID(document)
+		ionDID, createOp, err := NewModenaDID(document)
 		assert.NoError(tt, err)
 		assert.NotEmpty(tt, ionDID)
 		assert.NotEmpty(tt, createOp)

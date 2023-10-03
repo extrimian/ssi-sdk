@@ -1,4 +1,4 @@
-package ion
+package modena
 
 import (
 	"embed"

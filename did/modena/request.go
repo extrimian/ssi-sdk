@@ -1,4 +1,4 @@
-package ion
+package modena
 
 import (
 	"github.com/extrimian/ssi-sdk/crypto/jwx"
@@ -40,7 +40,7 @@ func NewCreateRequest(recoveryKey, updateKey jwx.PublicKeyJWK, document Document
 	}
 	suffixData := SuffixData{
 		DeltaHash:          deltaHash,
-		RecoveryCommitment: recoveryCommitment,
+		RecoveryCommitment:[]string{recoveryCommitment}
 	}
 
 	return &CreateRequest{
@@ -170,7 +170,7 @@ func NewRecoverRequest(didSuffix string, recoveryKey, nextRecoveryKey, nextUpdat
 	}
 
 	toBeSigned := RecoverySignedDataObject{
-		RecoveryCommitment: recoveryCommitment,
+		RecoveryCommitment: []string{recoveryCommitment},
 		RecoveryKey:        recoveryKey,
 		DeltaHash:          deltaHash,
 	}

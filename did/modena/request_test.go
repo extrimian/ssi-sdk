@@ -1,8 +1,7 @@
-package ion
+package modena
 
 import (
 	"testing"
-
 	"github.com/extrimian/ssi-sdk/crypto/jwx"
 	"github.com/extrimian/ssi-sdk/did"
 	"github.com/stretchr/testify/assert"
@@ -34,7 +33,7 @@ func TestCreateRequest(t *testing.T) {
 	assert.Equal(t, Create, createRequest.Type)
 	assert.Equal(t, "EiDKIkwqO69IPG3pOlHkdb86nYt0aNxSHZu2r-bhEznjdA", createRequest.Delta.UpdateCommitment)
 	assert.Len(t, createRequest.Delta.Patches, 1)
-	assert.Equal(t, "EiBfOZdMtU6OBw8Pk879QtZ-2J-9FbbjSZyoaA_bqD4zhA", createRequest.SuffixData.RecoveryCommitment)
+	assert.Equal(t, "EiBfOZdMtU6OBw8Pk879QtZ-2J-9FbbjSZyoaA_bqD4zhA", createRequest.SuffixData.RecoveryCommitment[0])
 	assert.Equal(t, "EiCfDWRnYlcD9EGA3d_5Z1AHu-iYqMbJ9nfiqdz5S8VDbg", createRequest.SuffixData.DeltaHash)
 }
 

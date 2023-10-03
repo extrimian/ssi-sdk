@@ -1,4 +1,4 @@
-package ion
+package modena
 
 import (
 	"fmt"
@@ -97,7 +97,7 @@ func (CreateRequest) GetType() OperationType {
 
 type SuffixData struct {
 	DeltaHash          string `json:"deltaHash,omitempty"`
-	RecoveryCommitment string `json:"recoveryCommitment,omitempty"`
+	RecoveryCommitment []string `json:"recoveryCommitment,omitempty"`
 }
 
 type UpdateRequest struct {
@@ -252,7 +252,7 @@ func (RecoverRequest) GetType() OperationType {
 
 // RecoverySignedDataObject https://identity.foundation/sidetree/spec/#recovery-signed-data-object
 type RecoverySignedDataObject struct {
-	RecoveryCommitment string           `json:"recoveryCommitment,omitempty"`
+	RecoveryCommitment []string           `json:"recoveryCommitment,omitempty"`
 	RecoveryKey        jwx.PublicKeyJWK `json:"recoveryKey,omitempty"`
 	DeltaHash          string           `json:"deltaHash,omitempty"`
 	AnchorOrigin       string           `json:"anchorOrigin,omitempty"`

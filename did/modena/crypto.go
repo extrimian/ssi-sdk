@@ -1,4 +1,4 @@
-package ion
+package modena
 
 import (
 	"crypto/sha256"
@@ -7,10 +7,10 @@ import (
 	"fmt"
 	"strings"
 
-	sdkcrypto "github.com/extrimian/ssi-sdk/crypto/jwx"
 	"github.com/btcsuite/btcd/btcec/v2"
 	"github.com/btcsuite/btcd/btcec/v2/ecdsa"
 	"github.com/decred/dcrd/dcrec/secp256k1/v4"
+	sdkcrypto "github.com/extrimian/ssi-sdk/crypto/jwx"
 	"github.com/goccy/go-json"
 	"github.com/gowebpki/jcs"
 	"github.com/multiformats/go-multihash"

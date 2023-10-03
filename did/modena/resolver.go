@@ -1,4 +1,4 @@
-package ion
+package modena
 
 import (
 	"bytes"
@@ -41,7 +41,7 @@ func (LocalResolver) Resolve(_ context.Context, id string, _ ...resolution.Optio
 			EquivalentID: []string{shortFormDID},
 			Method: resolution.Method{
 				Published:          false,
-				RecoveryCommitment: initialState.SuffixData.RecoveryCommitment,
+				RecoveryCommitment: initialState.SuffixData.RecoveryCommitment[0],
 				UpdateCommitment:   initialState.Delta.UpdateCommitment},
 		}}, nil
 }
@@ -59,7 +59,7 @@ type Resolver struct {
 
 var _ resolution.Resolver = (*Resolver)(nil)
 
-// NewIONResolver creates a new resolution for the ION DID method with a common base URL
+// NewModenaResolver creates a new resolution for the ION DID method with a common base URL
 // The base URL is the URL of the ION node, for example: https://ion.tbd.network
 // The resolution will append the DID to the base URL to resolve the DID such as
 //
@@ -68,7 +68,7 @@ var _ resolution.Resolver = (*Resolver)(nil)
 // and similarly for submitting anchor operations to the ION node...
 //
 //	https://ion.tbd.network/operations
-func NewIONResolver(client *http.Client, baseURL string) (*Resolver, error) {
+func NewModenaResolver(client *http.Client, baseURL string) (*Resolver, error) {
 	if client == nil {
 		return nil, errors.New("client cannot be nil")
 	}
@@ -107,7 +107,7 @@ func (i Resolver) Resolve(ctx context.Context, id string, _ ...resolution.Option
 				EquivalentID: []string{shortFormDID},
 				Method: resolution.Method{
 					Published:          false,
-					RecoveryCommitment: initialState.SuffixData.RecoveryCommitment,
+					RecoveryCommitment: initialState.SuffixData.RecoveryCommitment[0],
 					UpdateCommitment:   initialState.Delta.UpdateCommitment},
 			}}, nil
 	}
@@ -152,7 +152,6 @@ func (i Resolver) Anchor(ctx context.Context, op AnchorOperation) (*resolution.R
 		return nil, errors.Wrapf(err, "marshalling anchor operation %+v", op)
 	}
 
-	
 	req, err := http.NewRequestWithContext(ctx, http.MethodPost, strings.Join([]string{i.baseURL.String(), "operations"}, "/"), bytes.NewReader(jsonOpBytes))
 	if err != nil {
 		return nil, errors.Wrap(err, "creating request")

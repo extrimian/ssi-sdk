@@ -76,14 +76,14 @@ type prefix struct {
 	chains []string
 }
 
-const (
+var (
 	Prefixes = []prefix{
 		{
-			base: "did:quarkid", chains: {"zksync", "matic", "rsk"},
+			base: "did:quarkid", chains: []string{"zksync", "matic", "rsk"},
 		}, {
-			base: "did:modena", chains: {"zksync", "matic", "rsk"},
+			base: "did:modena", chains: []string{"zksync", "matic", "rsk"},
 		}, {
-			base: "did:quarkid", chains: {"zksync", "matic", "rsk"},
+			base: "did:quarkid", chains: []string{"zksync", "matic", "rsk"},
 		}}
 )
 

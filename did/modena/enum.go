@@ -1,4 +1,4 @@
-package ion
+package modena
 
 type Network string
 
