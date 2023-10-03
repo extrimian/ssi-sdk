@@ -120,15 +120,15 @@ type UpdateSignedDataObject struct {
 
 type Delta struct {
 	Patches          []Patch `json:"patches,omitempty"` //revive:disable-line
-	UpdateCommitment string  `json:"updateCommitment,omitempty"`
+	UpdateCommitment []string  `json:"updateCommitment,omitempty"`
 }
 
 func (d *Delta) UnmarshalJSON(data []byte) error {
-	var deltaMap map[string]any
+	var deltaMap map[[]string]any
 	if err := json.Unmarshal(data, &deltaMap); err != nil {
 		return errors.Wrap(err, "unmarshalling patch to generic map")
 	}
-	updateCommitment, ok := deltaMap["updateCommitment"].(string)
+	updateCommitment, ok := deltaMap["updateCommitment"].([]string)
 	if !ok {
 		return fmt.Errorf("no updateCommitment found in delta")
 	}
@@ -193,7 +193,7 @@ func (d *Delta) UnmarshalJSON(data []byte) error {
 func NewDelta(updateCommitment string) Delta {
 	return Delta{
 		Patches:          make([]Patch, 0),
-		UpdateCommitment: updateCommitment,
+		UpdateCommitment: {updateCommitment},
 	}
 }
 

@@ -30,7 +30,7 @@ type Method struct {
 	RecoveryCommitment interface{} `json:"recoveryCommitment,omitempty"`
 
 	// The `updateCommitment` property in https://identity.foundation/sidetree/spec/#did-resolver-output
-	UpdateCommitment string `json:"updateCommitment,omitempty"`
+	UpdateCommitment interface{} `json:"updateCommitment,omitempty"`
 }
 
 // DocumentMetadata https://www.w3.org/TR/did-core/#did-document-metadata
