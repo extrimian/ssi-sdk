@@ -5,13 +5,14 @@ type (
 )
 
 const (
-	KeyMethod  Method = "key"
-	PeerMethod Method = "peer"
-	PKHMethod  Method = "pkh"
-	WebMethod  Method = "web"
-	IONMethod  Method = "ion"
-	JWKMethod  Method = "jwk"
-	ModenaMethod Method = "modena"
+	KeyMethod     Method = "key"
+	PeerMethod    Method = "peer"
+	PKHMethod     Method = "pkh"
+	WebMethod     Method = "web"
+	IONMethod     Method = "ion"
+	JWKMethod     Method = "jwk"
+	QuarkidMethod Method = "quarkid"
+	ModenaMethod  Method = "modena"
 )
 
 func (m Method) String() string {

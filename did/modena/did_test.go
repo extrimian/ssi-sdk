@@ -125,7 +125,7 @@ func TestCreateLongFormDID(t *testing.T) {
 func TestCreateShortFormDID(t *testing.T) {
 	knownSuffixData := SuffixData{
 		DeltaHash:          "EiCfDWRnYlcD9EGA3d_5Z1AHu-iYqMbJ9nfiqdz5S8VDbg",
-		RecoveryCommitment: ["EiBfOZdMtU6OBw8Pk879QtZ-2J-9FbbjSZyoaA_bqD4zhA"],
+		RecoveryCommitment: []string{"EiBfOZdMtU6OBw8Pk879QtZ-2J-9FbbjSZyoaA_bqD4zhA"},
 	}
 
 	shortFormDID, err := CreateShortFormDID(knownSuffixData)

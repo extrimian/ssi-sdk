@@ -1,12 +1,12 @@
 package modena
 
 import (
-	"fmt"
+	// "fmt"
 
 	"github.com/extrimian/ssi-sdk/crypto/jwx"
 	"github.com/extrimian/ssi-sdk/did"
-	"github.com/goccy/go-json"
-	"github.com/pkg/errors"
+	// "github.com/goccy/go-json"
+	// "github.com/pkg/errors"
 )
 
 // object models
@@ -96,7 +96,7 @@ func (CreateRequest) GetType() OperationType {
 }
 
 type SuffixData struct {
-	DeltaHash          string `json:"deltaHash,omitempty"`
+	DeltaHash          string   `json:"deltaHash,omitempty"`
 	RecoveryCommitment []string `json:"recoveryCommitment,omitempty"`
 }
 
@@ -119,8 +119,8 @@ type UpdateSignedDataObject struct {
 }
 
 type Delta struct {
-	Patches          []Patch `json:"patches,omitempty"` //revive:disable-line
-	UpdateCommitment []string  `json:"updateCommitment,omitempty"`
+	Patches          []Patch  `json:"patches,omitempty"` //revive:disable-line
+	UpdateCommitment []string `json:"updateCommitment,omitempty"`
 }
 
 // func (d *Delta) UnmarshalJSON(data []byte) error {
@@ -193,7 +193,7 @@ type Delta struct {
 func NewDelta(updateCommitment string) Delta {
 	return Delta{
 		Patches:          make([]Patch, 0),
-		UpdateCommitment: {updateCommitment},
+		UpdateCommitment: []string{updateCommitment},
 	}
 }
 
@@ -252,7 +252,7 @@ func (RecoverRequest) GetType() OperationType {
 
 // RecoverySignedDataObject https://identity.foundation/sidetree/spec/#recovery-signed-data-object
 type RecoverySignedDataObject struct {
-	RecoveryCommitment []string           `json:"recoveryCommitment,omitempty"`
+	RecoveryCommitment []string         `json:"recoveryCommitment,omitempty"`
 	RecoveryKey        jwx.PublicKeyJWK `json:"recoveryKey,omitempty"`
 	DeltaHash          string           `json:"deltaHash,omitempty"`
 	AnchorOrigin       string           `json:"anchorOrigin,omitempty"`

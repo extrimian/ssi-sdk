@@ -40,7 +40,7 @@ func NewCreateRequest(recoveryKey, updateKey jwx.PublicKeyJWK, document Document
 	}
 	suffixData := SuffixData{
 		DeltaHash:          deltaHash,
-		RecoveryCommitment:[]string{recoveryCommitment}
+		RecoveryCommitment: []string{recoveryCommitment},
 	}
 
 	return &CreateRequest{
